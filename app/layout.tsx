@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Ubuntu, Fredoka } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ExactNavbarAligned from "@/components/navbar";
 import Footer from "@/components/fotter";
 
-const ubuntu = Ubuntu({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fredoka = Fredoka({
+const inter = Inter({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -28,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.className} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <ExactNavbarAligned />
         {children}
         <Footer />

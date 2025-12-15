@@ -3,6 +3,7 @@ import DevelopmentProcessSection from '@/components/appProcess'
 import AppDevelopmentServicesSection from '@/components/appServices'
 import HeroSection from '@/components/HeroSection'
 import ContactPage from '@/components/miniContact'
+import MovingTestimonials from '@/components/testmonial'
 import React from 'react'
 
 const AppDevelop = () => {
@@ -19,6 +20,7 @@ const AppDevelop = () => {
         <AppDevelopmentServicesSection/>
         <AppDevelopmentStack/>
         <DevelopmentProcessSection/>
+        <MovingTestimonials/>
         <ContactPage
         title="Want to develop a mobile app?"
         description="Our experts will help you create a seamless mobile experience."

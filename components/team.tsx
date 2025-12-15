@@ -2,126 +2,138 @@
 
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
-
-const ceo = {
-  name: "Sai Sujan",
-  role: "Founder & CEO",
-  image: "/33.png",
-  linkedin: "#",
-  description:
-    "Visionary leader driving the platform with a strong focus on innovation, impact, and scalable education solutions.",
-};
 
 const team = [
   {
     name: "Roopa",
     role: "Lead Developer & Operations",
     image: "/11.png",
+    linkedin: "#",
   },
   {
     name: "Sreedhar",
     role: "Marketing Head",
     image: "/22.png",
+    linkedin: "#",
   },
+  {
+    name: "Mason Oliver",
+    role: "UI/UX Designer",
+    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c",
+    linkedin: "#",
+  },
+  {
+    name: "Roopa",
+    role: "Lead Developer & Operations",
+    image: "/11.png",
+    linkedin: "#",
+  },
+ 
 ];
 
 export default function TeamSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-39">
-        {/* Title */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-semibold text-black">
-            Meet Our <span className="text-[#f54e02]">Team</span>
-          </h2>
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-            The people who turn vision into reality.
-          </p>
-        </div>
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-2">
 
-        {/* CEO Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center mb-24">
-          {/* CEO Image */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="mx-auto md:mx-0 max-w-[340px] rounded-2xl overflow-hidden"
-          >
-            <Image
-              src={ceo.image}
-              alt={ceo.name}
-              width={400}
-              height={400}
-              className="aspect-square w-full object-cover"
-            />
-          </motion.div>
+        {/* CEO Intro Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          {/* Left Image */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="rounded-2xl overflow-hidden shadow-lg max-w-md">
+              <Image
+                src="/33.png"
+                alt="Sai Sujan - CEO"
+                width={500}
+                height={600}
+                className="object-cover"
+              />
+            </div>
+          </div>
 
-          {/* CEO Content */}
+          {/* Right Content */}
           <div>
-            <h3 className="text-3xl font-semibold text-black">
-              {ceo.name}
-            </h3>
-            <p className="text-[#f54e02] font-medium mt-1">
-              {ceo.role}
+            <p className="uppercase tracking-widest text-sm text-orange-500 font-semibold">
+              Meet Our Captain
+            </p>
+            <h2 className="mt-3 text-4xl font-bold text-[#1f3a5f]">
+              Sai Sujan
+            </h2>
+            <p className="mt-1 text-lg font-medium text-gray-600">
+              CEO & Co-Founder, Shraddha
             </p>
 
-            <p className="mt-5 text-gray-600 leading-relaxed max-w-lg">
-              {ceo.description}
+            <p className="mt-6 text-gray-600 leading-relaxed">
+              Sai Sujan is the driving force behind Shraddha’s vision to build
+              scalable web applications, high-performance mobile apps, and
+              result-oriented digital marketing solutions. With a strong focus on
+              innovation, execution, and long-term partnerships, he leads the
+              company with a product-first and client-centric mindset.
+            </p>
+
+            <p className="mt-4 text-gray-600 leading-relaxed">
+              Under his leadership, Shraddha has helped startups and enterprises
+              transform their digital presence and accelerate business growth
+              through technology.
             </p>
 
             <a
-              href={ceo.linkedin}
-              className="inline-flex items-center gap-2 mt-6 text-black hover:text-[#f54e02] transition"
+              href="#"
+              className="inline-flex items-center gap-2 mt-6 text-[#1f3a5f] font-medium hover:text-blue-600 transition"
             >
-              <Linkedin size={18} />
-              <span className="text-sm font-medium">LinkedIn</span>
+              <Linkedin size={20} />
+              Connect on LinkedIn
             </a>
           </div>
         </div>
-      
 
+        {/* Team Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-semibold text-[#1f3a5f]">
+            Meet the People Behind
+          </h2>
+          <p className="text-4xl font-semibold text-[#1f3a5f] mt-2">
+            the Platform
+          </p>
+        </div>
 
+        {/* Team Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {team.map((member, i) => (
+            <div
+              key={i}
+              className="group rounded-2xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:shadow-lg"
+            >
+              <div className="overflow-hidden rounded-xl">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={400}
+                  height={400}
+                  className="h-[300px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <div className="mt-5 flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1f3a5f]">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-gray-500">{member.role}</p>
+                </div>
+
+                <a
+                  href={member.linkedin}
+                  className="text-[#1f3a5f] hover:text-blue-600 transition"
+                >
+                  <Linkedin size={18} />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
 
       </div>
-        <div className="max-w-7xl mx-auto">
-          {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-6xl mx-auto">
-            {team.map((member, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -6 }}
-                className="group bg-white text-center"
-              >
-                {/* Image */}
-                <div className="mx-auto max-w-[340px] overflow-hidden rounded-2xl">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Name & Role BELOW image */}
-                <div className="mt-4">
-                  <h4 className="text-xl font-semibold text-black">
-                    {member.name}
-                  </h4>
-                  <p className="text-sm text-gray-500">
-                    {member.role}
-                  </p>
-                  <a
-              href={ceo.linkedin}
-              className="inline-flex items-center gap-2 mt-6 text-black hover:text-[#f54e02] transition"
-            >
-              <Linkedin size={18} />
-            </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
     </section>
   );
 }
