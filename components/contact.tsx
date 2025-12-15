@@ -1,8 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Send, Clock } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const contactInfo = [
     {
       icon: <MapPin className="text-orange-500" />,
@@ -30,6 +34,31 @@ export default function ContactPage() {
     },
   ];
 
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const formData = {
+        name: (document.querySelector('input[placeholder="Your Name *"]') as HTMLInputElement)?.value,
+        email: (document.querySelector('input[placeholder="Email Address *"]') as HTMLInputElement)?.value,
+        phone: (document.querySelector('input[placeholder="Phone Number"]') as HTMLInputElement)?.value,
+        company: (document.querySelector('input[placeholder="Company Name"]') as HTMLInputElement)?.value,
+        message: (document.querySelector('textarea[placeholder="Tell us about your project..."]') as HTMLTextAreaElement)?.value,
+      };
+
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      setSuccess(true);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="w-full bg-white text-gray-800 px-6 py-10 max-w-7xl mx-auto">
       {/* Header */}
@@ -46,8 +75,7 @@ export default function ContactPage() {
           Let's Start a <span className="text-orange-500">Conversation</span>
         </motion.h1>
         <motion.p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-          Have a project in mind? Reach out and let’s create something amazing
-          together.
+          Have a project in mind? Reach out and let’s create something amazing together.
         </motion.p>
       </motion.div>
 
@@ -95,9 +123,17 @@ export default function ContactPage() {
             whileHover={{ scale: 1.05, backgroundColor: "#f97316" }}
             whileTap={{ scale: 0.95 }}
             className="w-full mt-12 bg-orange-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition"
+            onClick={handleSubmit}
+            disabled={loading}
           >
-            Send Message <Send size={18} />
+            {loading ? "Sending..." : "Send Message"} <Send size={18} />
           </motion.button>
+
+          {success && (
+            <p className="text-green-600 mt-2 text-center font-medium">
+              Message sent successfully!
+            </p>
+          )}
         </motion.div>
 
         {/* Contact Info + Map */}
@@ -114,7 +150,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* MAP */}
               {item.mapSrc && (
                 <motion.div
                   whileHover={{ scale: 1.01 }}
