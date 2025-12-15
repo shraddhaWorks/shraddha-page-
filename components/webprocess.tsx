@@ -99,7 +99,7 @@ export default function DevelopmentProcessSection() {
             <div className="relative max-w-lg w-full overflow-hidden  ">
 
               <img
-                src="/landing2-right-bottom-new-1.png"
+                src="/slide2.jpeg"
                 alt="Presentation"
                 className="w-full h-[520px] object-cover"
               />

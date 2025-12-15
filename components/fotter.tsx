@@ -79,7 +79,7 @@ export default function Footer() {
               </li>
 
               <li className="font-medium text-white">
-                <a href="tel:+919390519099">+91 9390519099</a>
+                <a href="tel:+919494777697">+91 9494777697</a>
               </li>
               <li className="font-medium text-white">
                 <a href="mailto:info@shraddha.org.in">

@@ -17,9 +17,9 @@ const Web = () => {
   return (
     <div>
       <HeroSection
-        tag="WEB DEVELOPMENT SERVICES"
-        title="Custom Web Solutions for Growing Businesses"
-        description="We create custom, responsive, and user-friendly websites designed to showcase your brand and drive conversions. From simple landing pages to complex e-commerce platforms, we build web solutions that deliver results."
+        tag="WEB DEVELOPMENT"
+        title="Websites That Work for Your Business"
+        description="We build responsive, fast, and conversion-focused websites tailored to your business goals. From corporate websites to complex web applications, we ensure performance, scalability, and usability at every level."
         primaryBtnText="Get a Free Quote"
         primaryBtnLink="#"
         secondaryBtnText="View Our Work"

@@ -114,7 +114,7 @@ export default function DevelopmentProcessSection() {
           >
             <div className="relative max-w-lg w-full overflow-hidden rounded-xl">
               <img
-                src="/slide2.jpeg"
+                src="/web-left-process.webp"
                 alt="Mobile App Presentation"
                 className="w-full h-[700px] object-cover"
               />
