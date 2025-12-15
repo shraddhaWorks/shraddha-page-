@@ -21,12 +21,7 @@ const AppDevelop = () => {
       <AppDevelopmentServicesSection />
       <AppDevelopmentStack />
       <DevelopmentProcessSection />
-      <ContactPage
-        title="Want to develop a mobile app?"
-        description="Our experts will help you create a seamless mobile experience."
-        buttonText="Get a Free Quote"
-        buttonLink="/contact"
-      />
+      
     </div>
   )
 }

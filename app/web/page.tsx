@@ -32,12 +32,7 @@ const Web = () => {
 
       <MovingTestimonials />
 
-      <ContactPage
-        title="Ready to build your website?"
-        description="Discuss your web project with us and get a free quote today."
-        buttonText="Start Your Project"
-        buttonLink="/contact"
-      />
+      
     </div>
   )
 }

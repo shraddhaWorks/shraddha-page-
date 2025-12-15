@@ -25,12 +25,7 @@ const Digital = () => {
 
       <DigitalMarketingProcessSection />
       <MovingTestimonials/>
-       <ContactPage
-        title="Ready to grow your online presence?"
-        description="Contact us today for a custom digital marketing strategy."
-        buttonText="Get Started"
-        buttonLink="/contact"
-      />
+       
     </div>
   );
 };

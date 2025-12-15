@@ -17,12 +17,7 @@ const About = () => {
       <AboutPage />
       <OurClients />
       <OurTeam />
-      <ContactPage
-        title="Want to collaborate with us?"
-        description="Reach out to explore partnership opportunities and get in touch."
-        buttonText="Contact Us"
-        buttonLink="/contact"
-      />
+      
     </div>
 
   )

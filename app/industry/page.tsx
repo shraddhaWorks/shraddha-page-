@@ -206,12 +206,7 @@ export default function IndustriesSection() {
             </div>
             <div>
                 <MovingTestimonials />
-                <ContactPage
-  title="Explore the Industries We Serve"
-  description="We provide tailored web, mobile, and digital solutions for a wide range of industries, helping organizations innovate and grow with technology."
-  buttonText="See Our Expertise"
-  buttonLink="/contact"
-/>
+                
 
             </div>
         </div>

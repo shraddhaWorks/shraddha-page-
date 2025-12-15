@@ -6,9 +6,18 @@ import { Mail, Send, X } from "lucide-react";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
+  title?: string;
+  description?: string;
+  submitText?: string;
 }
 
-export default function ContactPopup({ isOpen, onClose }: Props) {
+export default function ContactPopup({
+  isOpen,
+  onClose,
+  title = "Contact Us",
+  description = "Book a free consultation with our experts",
+  submitText = "Submit Request",
+}: Props) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -48,10 +57,8 @@ export default function ContactPopup({ isOpen, onClose }: Props) {
                   <Mail className="text-orange-500" size={26} />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold">Contact Us</h2>
-                  <p className="text-gray-500">
-                    Book a free consultation with our experts
-                  </p>
+              <h2 className="text-3xl font-bold">{title}</h2>
+              <p className="text-gray-500">{description}</p>
                 </div>
               </div>
 
@@ -191,7 +198,7 @@ export default function ContactPopup({ isOpen, onClose }: Props) {
                     text-base
                   "
                 >
-                  Submit Request <Send size={18} />
+                  {submitText} <Send size={18} />
                 </motion.button>
               </form>
             </motion.div>
