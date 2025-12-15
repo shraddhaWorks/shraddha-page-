@@ -1,12 +1,13 @@
-"use client"
-import AboutSection from '@/components/aboutus'
-import Banner from '@/components/baneer'
-import React from 'react'
-import { motion } from "framer-motion";
-import BusinessServicesSection from '@/components/services';
-import ContactPage from '@/components/miniContact';
-import WhyChooseShraddha from '@/components/WhyChooseShraddha';
+"use client";
 
+import React, { useState, useEffect } from "react";
+import AboutSection from "@/components/aboutus";
+import Banner from "@/components/baneer";
+import { motion } from "framer-motion";
+import BusinessServicesSection from "@/components/services";
+import ContactPopup from "@/components/miniContact"; // Make sure this matches your actual file
+import WhyChooseShraddha from "@/components/WhyChooseShraddha";
+import MovingTestimonials from "@/components/MovingTestimonials"; // Add this import if you have it
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -24,8 +25,8 @@ const Home = () => {
       <Banner />
       <BusinessServicesSection />
       <AboutSection />
-
-    <MovingTestimonials/>
+      <WhyChooseShraddha />
+      <MovingTestimonials />
 
       {/* Contact Popup */}
       <ContactPopup
