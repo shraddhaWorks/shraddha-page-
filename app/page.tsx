@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import BusinessServicesSection from "@/components/services";
 import ContactPopup from "@/components/miniContact"; // Make sure this matches your actual file
 import WhyChooseShraddha from "@/components/WhyChooseShraddha";
-import MovingTestimonials from "@/components/MovingTestimonials"; // Add this import if you have it
+import MovingTestimonials from "@/components/testmonial";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -24,12 +24,11 @@ const Home = () => {
     <div className="relative">
       <Banner />
       <BusinessServicesSection />
-      <AboutSection />
       <WhyChooseShraddha />
       <MovingTestimonials />
 
-      {/* Contact Popup */}
-      <ContactPopup
+       {/* Contact Popup */}
+       <ContactPopup
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}
       />
