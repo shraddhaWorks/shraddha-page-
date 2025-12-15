@@ -16,12 +16,7 @@ const team = [
     image: "/22.png",
     linkedin: "#",
   },
-  {
-    name: "Mason Oliver",
-    role: "UI/UX Designer",
-    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c",
-    linkedin: "#",
-  },
+ 
   {
     name: "Roopa",
     role: "Lead Developer & Operations",
