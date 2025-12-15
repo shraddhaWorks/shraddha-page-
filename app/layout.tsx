@@ -13,6 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Shraddha Tech Solutions",
   description: "Empowering Your Digital Journey with Innovative Tech Solutions",
+  icons: {
+    icon: "/icon.png",          // Browser tab
+           // iOS
+  },
 };
 
 export default function RootLayout({
