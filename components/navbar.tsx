@@ -8,12 +8,13 @@ const BRAND_COLOR = "#D94500";
 const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/aboutt" },
+  { name: "Industries", href: "/industry" },
   { name: "Team", href: "/team" },
 ];
 
 const SERVICES = [
+  { name: "Custom App Development", href: "/appDevelop" },
   { name: "Web Development", href: "/web" },
-  { name: "App Development", href: "/appDevelop" },
   { name: "Digital Marketing", href: "/digital" },
 ];
 
@@ -22,19 +23,16 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // ✅ SCROLL DETECTION
+  // Scroll detection
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
-      {/* ===== NAVBAR ===== */}
+      {/* ================= NAVBAR ================= */}
       <nav
         className={`fixed top-0 z-50 w-full transition-all duration-300
           ${scrolled ? "bg-black shadow-md" : "bg-transparent"}
@@ -46,14 +44,16 @@ export default function Navbar() {
           <Link href="/">
             <img
               src="/shraddha-logo-navbar.svg"
-              alt="Logo"
+              alt="Shraddha Tech Solutions"
               className="h-9 w-auto"
             />
           </Link>
 
-          {/* DESKTOP MENU */}
+          {/* ========== DESKTOP MENU ========== */}
           <div className="ml-auto hidden items-center space-x-12 md:flex">
             <ul className="flex items-center space-x-10">
+
+              {/* Home / About / Industries / Team */}
               {NAV_LINKS.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -65,23 +65,28 @@ export default function Navbar() {
                 </li>
               ))}
 
-              {/* SERVICES DROPDOWN */}
+              {/* SERVICES */}
               <li
                 className="relative"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
-                <button className="text-white transition hover:text-[#D94500]">
-                  Our Services
-                </button>
+                {/* Clickable Services */}
+                <Link
+                  href="/services"
+                  className="text-white transition hover:text-[#D94500]"
+                >
+                  Services
+                </Link>
 
+                {/* Dropdown */}
                 {servicesOpen && (
-                  <div className="absolute top-full mt-2 w-56 overflow-hidden rounded bg-black shadow-lg">
-                    {SERVICES.map((service) => (
+                  <div className="absolute left-0 top-full mt-1 pt-2 w-60 rounded bg-black shadow-lg">
+                    {SERVICES.map((service) => ( 
                       <Link
                         key={service.name}
                         href={service.href}
-                        className="block px-4 py-2 text-white hover:bg-[#D94500]"
+                        className="block px-4 py-3 text-sm text-white hover:bg-[#D94500]"
                       >
                         {service.name}
                       </Link>
@@ -91,17 +96,17 @@ export default function Navbar() {
               </li>
             </ul>
 
-            {/* CONTACT */}
+            {/* CONTACT BUTTON */}
             <Link
               href="/contact"
               className="rounded px-6 py-2 text-white transition hover:opacity-90"
               style={{ backgroundColor: BRAND_COLOR }}
             >
-              Contact Now
+              Contact
             </Link>
           </div>
 
-          {/* MOBILE BTN */}
+          {/* ========== MOBILE BUTTON ========== */}
           <button
             onClick={() => setOpen(true)}
             className="ml-auto flex flex-col gap-1 md:hidden"
@@ -113,7 +118,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE OVERLAY */}
+      {/* ================= MOBILE OVERLAY ================= */}
       {open && (
         <div
           className="fixed inset-0 z-40 bg-black/60"
@@ -121,9 +126,10 @@ export default function Navbar() {
         />
       )}
 
-      {/* MOBILE SIDEBAR */}
+      {/* ================= MOBILE DRAWER ================= */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-80 bg-black px-6 py-8 transition-transform duration-300
+        className={`fixed right-0 top-0 z-50 h-full w-80 bg-black px-6 py-8
+          transition-transform duration-300
           ${open ? "translate-x-0" : "translate-x-full"}
         `}
       >
@@ -138,23 +144,32 @@ export default function Navbar() {
         </div>
 
         <ul className="space-y-6 text-lg text-white">
-          {NAV_LINKS.map((link) => (
-            <li key={link.name}>
-              <Link href={link.href} onClick={() => setOpen(false)}>
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          </li>
+          <li>
+            <Link href="/aboutt" onClick={() => setOpen(false)}>About Us</Link>
+          </li>
+          <li>
+            <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
+          </li>
+          <li>
+            <Link href="/industry" onClick={() => setOpen(false)}>Industries</Link>
+          </li>
+          <li>
+            <Link href="/team" onClick={() => setOpen(false)}>Team</Link>
+          </li>
 
+          {/* Mobile Services List */}
           <li className="border-t border-white/20 pt-4">
-            <p className="mb-3 font-semibold">Our Services</p>
+            <p className="mb-3 font-semibold">Service Offerings</p>
             <div className="space-y-3 pl-2">
               {SERVICES.map((service) => (
                 <Link
                   key={service.name}
                   href={service.href}
                   onClick={() => setOpen(false)}
-                  className="block hover:text-[#D94500]"
+                  className="block text-sm hover:text-[#D94500]"
                 >
                   {service.name}
                 </Link>

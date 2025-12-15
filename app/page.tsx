@@ -36,74 +36,32 @@ const Home = () => {
           brand and has significantly improved our conversion rates."
         </p>
 
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center font-bold text-lg">
-            A
-          </div>
-          <div>
-            <h5 className="font-semibold">Ashok</h5>
-            <p className="text-xs text-gray-400">Director SSE</p>
-          </div>
-        </div>
-      </div>
+const Home = () => {
+  const [showPopup, setShowPopup] = useState(false);
 
-      {/* Card 2 */}
-      <div className="bg-[#101113] border border-gray-700 p-10 rounded-xl">
-        <div className="text-orange-500 text-5xl mb-4">❝</div>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 15000); // 15 seconds
 
-        <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-          "The AI workshop delivered by the Shraddha team was intellectually
-          stimulating and spiritually enriching. They introduced students to the
-          evolving world of AI with a unique blend of technical insight and
-          ethical awareness."
-        </p>
+    return () => clearTimeout(timer);
+  }, []);
 
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center font-bold text-lg">
-            V
-          </div>
-          <div>
-            <h5 className="font-semibold">Vinod</h5>
-            <p className="text-xs text-gray-400">
-              Placement Officer, IIT Idupulapaya
-            </p>
-          </div>
-        </div>
-      </div>
+  return (
+    <div className="relative">
+      <Banner />
+      <BusinessServicesSection />
+      <AboutSection />
 
-      {/* Card 3 */}
-      <div className="bg-[#101113] border border-gray-700 p-10 rounded-xl">
-        <div className="text-orange-500 text-5xl mb-4">❝</div>
+    <MovingTestimonials/>
 
-        <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-          "The Shraddha team demonstrated deep expertise in IoT technologies and
-          presented the concepts in a way that was both accessible and engaging
-          for students from various technical backgrounds."
-        </p>
-
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center font-bold text-lg">
-            K
-          </div>
-          <div>
-            <h5 className="font-semibold">Dr. Kumaran</h5>
-            <p className="text-xs text-gray-400">
-              HOD, Dhanalakshmi Srinivasan University
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-      <ContactPage
-        title="Ready to kickstart your journey?"
-        description="Let's discuss your ideas and make your vision a reality."
-        buttonText="Get Started"
-        buttonLink="/contact"
+      {/* Contact Popup */}
+      <ContactPopup
+        isOpen={showPopup}
+        onClose={() => setShowPopup(false)}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

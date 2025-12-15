@@ -3,6 +3,7 @@ import DevelopmentProcessSection from '@/components/appProcess'
 import AppDevelopmentServicesSection from '@/components/appServices'
 import HeroSection from '@/components/HeroSection'
 import ContactPage from '@/components/miniContact'
+import MovingTestimonials from '@/components/testmonial'
 import React from 'react'
 
 const AppDevelop = () => {

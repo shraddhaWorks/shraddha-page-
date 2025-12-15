@@ -14,7 +14,6 @@ const About = () => {
   return (
     <div>
       <HeroSection />
-      <MissionVisionSection />
       <AboutPage />
       <OurClients />
       <OurTeam />
