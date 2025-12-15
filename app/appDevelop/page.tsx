@@ -8,18 +8,19 @@ import React from 'react'
 const AppDevelop = () => {
   return (
     <div>
-   <HeroSection
-  tag = "APP DEVELOPMENT"
-  title = "Transform Your Ideas Into Reality"
-  description = "We build innovative, user-friendly mobile applications that engage users and drive business growth. From concept to deployment, our development team creates custom solutions for iOS and Android platforms."
-  primaryBtnText = "Discuss Your Project"
-  primaryBtnLink = "#"
-  imageSrc = "/appService-top-right.jpeg"
-/>
-        <AppDevelopmentServicesSection/>
-        <AppDevelopmentStack/>
-        <DevelopmentProcessSection/>
-        <ContactPage
+      <HeroSection
+        tag="CUSTOM APP DEVELOPMENT"
+        title="Enterprise-Grade Custom Applications Built to Scale"
+        description="We design and develop fully customized web and mobile applications tailored to complex business and institutional requirements. From idea to deployment, our solutions focus on security, scalability, and long-term performance to solve real operational challenges."
+        primaryBtnText="Discuss Your Project"
+        primaryBtnLink="#"
+        imageSrc="/appService-top-right.jpeg"
+      />
+
+      <AppDevelopmentServicesSection />
+      <AppDevelopmentStack />
+      <DevelopmentProcessSection />
+      <ContactPage
         title="Want to develop a mobile app?"
         description="Our experts will help you create a seamless mobile experience."
         buttonText="Get a Free Quote"

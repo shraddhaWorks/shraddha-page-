@@ -4,16 +4,17 @@ import Image from "next/image";
 
 export default function HeroSection({
     tag = "ABOUT US",
-    title = "Empowering Tech Careers Through Quality Education",
-    description = "Shraddha is India's premier EdTech platform, bridging the gap between education and industry requirements through comprehensive training and placement services.",
+    title = "We Don’t Just Build Software — We Build Impactful Solutions",
+    description = "Shraddha Group is a technology-driven organization focused on delivering innovative, scalable, and reliable digital solutions. We help businesses and institutions bridge the gap between technology and real-world needs through IT development, digital transformation, and digital marketing services.",
     primaryBtnText = "Our Mission",
     primaryBtnLink = "#",
     secondaryBtnText = "Our Leadership",
     secondaryBtnLink = "#",
     imageSrc = "/aboutus-section1-img-new.png"
+
 }) {
     return (
-       
+
 
         <section className="w-full bg-black h-190 py-40 px-18">
             <div className="container mx-auto flex flex-col lg:flex-row items-center gap-10">

@@ -5,13 +5,14 @@ import React from 'react'
 import { motion } from "framer-motion";
 import BusinessServicesSection from '@/components/services';
 import ContactPage from '@/components/miniContact';
+import WhyChooseShraddha from '@/components/WhyChooseShraddha';
 
 const Home = () => {
   return (
     <div>
         <Banner/>
         <BusinessServicesSection/>
-        <AboutSection/>
+        <WhyChooseShraddha/>
        {/* ================= TESTIMONIALS ================= */}
       <section className="bg-[#1C1F24] py-20">
   <div className="container mx-auto px-17 text-white">

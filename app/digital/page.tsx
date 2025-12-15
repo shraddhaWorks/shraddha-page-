@@ -10,9 +10,9 @@ const Digital = () => {
   return (
     <div>
       <HeroSection
-        tag="DIGITAL MARKETING SERVICES"
-        title="Grow Your Online Presence"
-        description="Strategic digital marketing solutions designed to increase your brand visibility, drive qualified traffic, and boost conversions for measurable business growth."
+        tag="DIGITAL MARKETING"
+        title="Strategic Digital Marketing for Sustainable Growth"
+        description="We help brands build a strong online presence through SEO, paid advertising, and performance-driven campaigns. Our approach combines creativity, analytics, and continuous optimization to deliver measurable results."
         primaryBtnText="Get a Free Consultation"
         primaryBtnLink="#"
         imageSrc="/digital-top-right.jpg"
@@ -51,7 +51,7 @@ const Digital = () => {
       </section>
 
       <DigitalMarketingProcessSection />
-       <ContactPage
+      <ContactPage
         title="Ready to grow your online presence?"
         description="Contact us today for a custom digital marketing strategy."
         buttonText="Get Started"

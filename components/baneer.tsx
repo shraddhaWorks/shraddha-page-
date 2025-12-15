@@ -65,17 +65,14 @@ export default function Banner() {
 
                             {/* Heading */}
                             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-fredoka">
-                                <span className="text-[#F54E02]">#India's</span> Leading
+                                Transforming Ideas into
                                 <br className="md:hidden" />
-                                Software Development Hub
+                                <span className="text-[#F54E02]"> Digital Solutions</span>
                             </h1>
 
                             {/* Description */}
                             <p className="text-white/70 mb-6 max-w-md lg:max-w-lg">
-                                We build powerful, scalable, and modern software solutions tailored for
-                                businesses. From apps to enterprise systems, we deliver high-quality
-                                technology that drives real results.
-                            </p>
+                                We build powerful, scalable, and modern software solutions tailored for businesses. From apps to enterprise systems, we deliver high-quality technology that drives real results.    </p>
 
 
                             {/* Buttons */}
