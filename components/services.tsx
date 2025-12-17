@@ -38,7 +38,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   return (
     <div
       className="
-        relative flex flex-col px-18 py-8 rounded-lg shadow-xl 
+        relative flex flex-col px-6 sm:px-10 lg:px-18 py-6 sm:py-8 rounded-lg shadow-xl 
         bg-[#1c1f21] transition-all duration-300 overflow-hidden
         border border-[#1c1f21] 
         hover:border-[#F54E02]
@@ -51,15 +51,15 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
       <div className="relative z-10 flex flex-col h-full">
         
         {/* Icon + Title */}
-        <div className="flex items-center mb-6">
+        <div className="flex items-center mb-4 sm:mb-6">
           <Icon size={24} style={{ color: BRAND_COLOR }} className="mr-3" />
-          <h3 className="text-xl font-semibold" style={{ color: BRAND_COLOR }}>
+          <h3 className="text-lg sm:text-xl font-semibold" style={{ color: BRAND_COLOR }}>
             {service.title}
           </h3>
         </div>
 
         {/* Description */}
-        <p className="text-gray-400 text-base mb-6 leading-relaxed flex-grow">
+        <p className="text-gray-400 text-sm sm:text-base mb-5 sm:mb-6 leading-relaxed flex-grow">
           {service.description}
         </p>
 
@@ -68,7 +68,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
           {service.features.map((feature, index) => (
             <li
               key={index}
-              className="flex items-start text-white text-base transition-colors duration-300 hover:text-orange-500"
+              className="flex items-start text-white text-sm sm:text-base transition-colors duration-300 hover:text-orange-500"
             >
               <CheckCircle
                 size={16}
@@ -88,27 +88,31 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
 // --- Main Section ---
 export default function BusinessServicesSection() {
   return (
-    <section className="py-24" style={{ backgroundColor: BG_DARK }}>
-      <div className="container mx-auto px-8 lg:px-12">
+    <section className="py-16 sm:py-20 lg:py-24" style={{ backgroundColor: BG_DARK }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold text-white mb-2">Business Services</h2>
-          <p className="text-gray-400 text-lg">Professional technology solutions to help your business grow</p>
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-2">
+            Business Services
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg">
+            Professional technology solutions to help your business grow
+          </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {SERVICES_DATA.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 sm:mt-14 lg:mt-16">
           <Link
             href="#"
-            className="inline-block px-10 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="inline-block px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             style={CtaButtonStyle}
             onMouseEnter={handleCtaButtonHover}
             onMouseLeave={handleCtaButtonLeave}
