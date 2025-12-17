@@ -17,23 +17,23 @@ const EXPERIENCE = [
 
 export default function WhyChooseShraddha() {
   return (
-    <section className="py-16 px-6 lg:px-16 bg-[#ffffff]">
-      <div className="container mx-auto flex flex-col lg:flex-row gap-10 items-start">
+    <section className="py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-16 bg-[#ffffff]">
+      <div className="container mx-auto flex flex-col lg:flex-row gap-8 sm:gap-10 items-start">
 
         {/* Left Content */}
-        <div className="lg:w-1/2 space-y-8 text-gray-900">
+        <div className="lg:w-1/2 space-y-6 sm:space-y-8 text-gray-900">
 
           {/* Why Choose */}
           <div className="space-y-4">
-            <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight">
               Why Choose <span className="text-[#F54E02]">Shraddha Group</span>?
             </h2>
 
             <ul className="space-y-2">
               {WHY_CHOOSE.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-[#F54E02] text-lg leading-none mt-0.5">▸</span>
-                  <span className="text-base lg:text-lg leading-snug text-gray-700">
+                  <span className="text-[#F54E02] text-base sm:text-lg leading-none mt-0.5">▸</span>
+                  <span className="text-sm sm:text-base lg:text-lg leading-snug text-gray-700">
                     {item}
                   </span>
                 </li>
@@ -43,15 +43,15 @@ export default function WhyChooseShraddha() {
 
           {/* Experience */}
           <div className="space-y-4">
-            <h3 className="text-2xl lg:text-3xl font-bold leading-tight">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
               Our Experience & Work
             </h3>
 
             <ul className="space-y-2">
               {EXPERIENCE.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-[#F54E02] text-lg leading-none mt-0.5">◆</span>
-                  <span className="text-base lg:text-lg leading-snug text-gray-700">
+                  <span className="text-[#F54E02] text-base sm:text-lg leading-none mt-0.5">◆</span>
+                  <span className="text-sm sm:text-base lg:text-lg leading-snug text-gray-700">
                     {item}
                   </span>
                 </li>
@@ -66,7 +66,7 @@ export default function WhyChooseShraddha() {
             <img
               src="/landing2-right-bottom-new-1.png"
               alt="Why Choose Shraddha"
-              className="w-full h-[400px] lg:h-[520px] object-cover"
+              className="w-full h-[260px] sm:h-[340px] lg:h-[520px] object-cover"
             />
           </div>
         </div>
