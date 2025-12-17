@@ -18,9 +18,51 @@ const team = [
   },
  
   {
-    name: "Roopa",
-    role: "Lead Developer & Operations",
-    image: "/11.png",
+    name: "Renuka",
+    role: "Frontend & UI/UX",
+    image: "/team/renu.jpg",
+    linkedin: "#",
+  },
+   {
+    name: "Poojitha",
+    role: "UI/UX Designer",
+    image: "/team/poojitha.jpg",
+    linkedin: "#",
+  },
+   {
+    name: "ABhi Ram",
+    role: "Full Stack Developer",
+    image: "/team/abhi.jpg",
+    linkedin: "#",
+  },
+   {
+    name: "Pravalika",
+    role: "Frontend Developer",
+    image: "/team/prava.jpg",
+    linkedin: "#",
+  },
+   {
+    name: "Supriya",
+    role: "Frontend Developer",
+    image: "/team/sup.jpg",
+    linkedin: "#",
+  },
+ {
+    name: "Jayasimha",
+    role: "Frontend Developer",
+    image: "/team/jaya.jpeg",
+    linkedin: "#",
+  },
+   {
+    name: "Dinesh",
+    role: "FullStack Developer",
+    image: "/team/dinesh.jpeg",
+    linkedin: "#",
+  },
+  {
+    name: "Shankar",
+    role: "FullStack Developer",
+    image: "/team/shankar.jpg",
     linkedin: "#",
   },
  
