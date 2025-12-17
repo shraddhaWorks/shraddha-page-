@@ -25,57 +25,46 @@ export default function WebServiceStack() {
         { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
         { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
         { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-
-        // ADDED NEW ONES
-        {
-            name: "Supabase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
-        },
-        {
-            name: "Vector DB (Pinecone)",
-            icon: "https://avatars.githubusercontent.com/u/79203942?s=200&v=4", // Pinecone logo
-        },
+        { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
+        { name: "Vector DB (Pinecone)", icon: "https://avatars.githubusercontent.com/u/79203942?s=200&v=4" },
     ];
 
     const cardClasses =
-        "bg-white rounded-xl shadow-lg p-6 h-full border border-gray-200";
+        "bg-white rounded-xl shadow-lg p-4 sm:p-6 h-full border border-gray-200";
 
     const iconClasses =
-        "w-[70px] h-[70px] p-4 bg-[rgba(245,78,2,0.1)] rounded-xl mb-3 transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-[rgba(245,78,2,0.2)]";
+        "w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] p-3 sm:p-4 bg-[rgba(245,78,2,0.1)] rounded-xl mb-3 transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-[rgba(245,78,2,0.2)]";
 
     return (
-        <section className="py-16 bg-[#1c1f23] py-6">
-            <div className="container mx-auto px-6 lg:px-18">
+        <section className="bg-[#1c1f23] py-12 sm:py-16">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-18">
 
                 {/* HEADER */}
-                <div className="text-center mb-10">
+                <div className="text-center mb-8 sm:mb-10">
                     <span className="inline-block bg-orange-600 w-14 h-[3px]"></span>
 
-                    <h2 className="text-white text-4xl font-bold mt-3">
+                    <h2 className="text-white text-3xl sm:text-4xl font-bold mt-3">
                         Our Technology <span className="text-orange-500">Stack</span>
                     </h2>
 
-                    <p className="text-white/70 w-full md:w-3/4 mx-auto mt-2">
+                    <p className="text-white/70 w-full md:w-3/4 mx-auto mt-2 text-sm sm:text-base">
                         We use the latest technologies and frameworks to build modern,
                         high-performance websites
                     </p>
                 </div>
 
                 {/* GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
                     {/* FRONTEND */}
                     <div className={cardClasses}>
-                        <h3 className="text-center text-xl font-semibold mb-5">
+                        <h3 className="text-center text-lg sm:text-xl font-semibold mb-5">
                             Frontend Technologies
                         </h3>
 
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-3 gap-4 sm:gap-6">
                             {frontend.map((tech) => (
-                                <div
-                                    key={tech.name}
-                                    className="group flex flex-col items-center text-center"
-                                >
+                                <div key={tech.name} className="group flex flex-col items-center text-center">
                                     <div className={iconClasses}>
                                         <Image
                                             src={tech.icon}
@@ -85,22 +74,23 @@ export default function WebServiceStack() {
                                             className="mx-auto"
                                         />
                                     </div>
-                                    <p className="font-medium mt-1">{tech.name}</p>
+                                    <p className="font-medium text-sm sm:text-base mt-1">
+                                        {tech.name}
+                                    </p>
                                 </div>
                             ))}
                         </div>
-
                     </div>
 
                     {/* BACKEND */}
                     <div className={cardClasses}>
-                        <h3 className="text-center text-xl font-semibold mb-5">
+                        <h3 className="text-center text-lg sm:text-xl font-semibold mb-5">
                             Backend Technologies
                         </h3>
 
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-3 gap-4 sm:gap-6">
                             {backend.map((tech) => (
-                                <div key={tech.name} className=" group flex flex-col items-center text-center">
+                                <div key={tech.name} className="group flex flex-col items-center text-center">
                                     <div className={iconClasses}>
                                         <Image
                                             src={tech.icon}
@@ -110,19 +100,21 @@ export default function WebServiceStack() {
                                             className="mx-auto"
                                         />
                                     </div>
-                                    <p className="font-medium">{tech.name}</p>
+                                    <p className="font-medium text-sm sm:text-base">
+                                        {tech.name}
+                                    </p>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* CMS & DB (NOW 3 COLUMNS) */}
+                    {/* CMS & DB */}
                     <div className={cardClasses}>
-                        <h3 className="text-center text-xl font-semibold mb-5">
+                        <h3 className="text-center text-lg sm:text-xl font-semibold mb-5">
                             CMS & Database
                         </h3>
 
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-3 gap-4 sm:gap-6">
                             {cms.map((tech) => (
                                 <div key={tech.name} className="group flex flex-col items-center text-center">
                                     <div className={iconClasses}>
@@ -134,7 +126,9 @@ export default function WebServiceStack() {
                                             className="mx-auto"
                                         />
                                     </div>
-                                    <p className="font-medium">{tech.name}</p>
+                                    <p className="font-medium text-sm sm:text-base">
+                                        {tech.name}
+                                    </p>
                                 </div>
                             ))}
                         </div>

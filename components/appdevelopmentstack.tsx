@@ -43,26 +43,25 @@ export default function AppDevelopmentStack() {
   ];
 
   return (
-    <section className="py-16 bg-[#f8f9fa]">
-      <div className="container mx-auto px-6 lg:px-18">
+    <section className="py-12 sm:py-14 lg:py-16 bg-[#f8f9fa]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-18">
 
         {/* Heading */}
-        <div className="text-center mb-10 text-black">
-          <span className="inline-block bg-[#ff4500] w-12 h-[3px]"></span>
+        <div className="text-center mb-8 sm:mb-10 text-black">
+          <span className="inline-block bg-[#ff4500] w-10 sm:w-12 h-[3px]"></span>
 
-          <h2 className="mt-3 text-3xl md:text-4xl font-fredoka">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-fredoka">
             Platforms & <span className="font-bold">Technologies</span>
           </h2>
 
-          <p className="max-w-xl mx-auto mt-2 text-black">
+          <p className="max-w-xl mx-auto mt-2 text-sm sm:text-base text-black">
             We use the latest technologies to build high-quality mobile
             applications
           </p>
         </div>
 
-
         {/* Infinite Loop */}
-        <div className="overflow-hidden py-6 mt-8 relative group">
+        <div className="overflow-hidden py-4 sm:py-6 mt-6 sm:mt-8 relative group">
           <style>{`
             @keyframes scrollLeft {
               0% { transform: translateX(0); }
@@ -77,39 +76,46 @@ export default function AppDevelopmentStack() {
             }
           `}</style>
 
-          {/* Twice list → Perfect Seamless Loop */}
+          {/* Twice list → Seamless Loop */}
           <div className="loop">
             {[...platforms, ...platforms].map((p, i) => (
-              <div key={i} className="flex flex-col items-center min-w-[120px] mx-6">
+              <div
+                key={i}
+                className="flex flex-col items-center min-w-[90px] sm:min-w-[120px] mx-4 sm:mx-6"
+              >
                 <div
                   className="
-                    w-[70px] h-[70px] bg-white rounded-2xl shadow-md 
-                    flex items-center justify-center mb-3
+                    w-[56px] h-[56px] sm:w-[70px] sm:h-[70px]
+                    bg-white rounded-2xl shadow-md
+                    flex items-center justify-center mb-2 sm:mb-3
                     transition-all duration-300 hover:-translate-y-1 hover:shadow-xl
                   "
                 >
                   <Image
                     src={p.icon}
                     alt={p.name}
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                     className="object-contain"
                   />
                 </div>
-                <p className="font-semibold text-gray-800 text-sm">{p.name}</p>
+                <p className="font-semibold text-gray-800 text-xs sm:text-sm">
+                  {p.name}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Tech Pills */}
-        <div className="mt-10 text-center">
+        <div className="mt-8 sm:mt-10 text-center">
           {techs.map((t) => (
             <span
               key={t}
               className="
-                inline-block px-4 py-2 rounded-full text-sm font-medium text-gray-700
-                mx-2 my-1
+                inline-block px-3 sm:px-4 py-1.5 sm:py-2
+                rounded-full text-xs sm:text-sm font-medium text-gray-700
+                mx-1.5 sm:mx-2 my-1
                 transition duration-300
                 hover:bg-[#ff4500] hover:text-white hover:-translate-y-1
               "

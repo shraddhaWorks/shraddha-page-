@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const BRAND_COLOR = "#D94500";
+const BRAND_COLOR = "#F54E02";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -23,7 +23,6 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll detection
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -35,156 +34,147 @@ export default function Navbar() {
       {/* ================= NAVBAR ================= */}
       <nav
         className={`fixed top-0 z-50 w-full transition-all duration-300
-          ${scrolled ? "bg-black shadow-md" : "bg-transparent"}
-        `}
+        ${scrolled ? "bg-black shadow-md" : "bg-transparent"}`}
       >
-        <div className="mx-auto flex h-20 max-w-8xl items-center px-6 md:px-10 lg:px-16">
-          
-          {/* LOGO */}
-          <Link href="/">
+        <div className="mx-auto flex h-16 max-w-8xl items-center px-5 lg:px-16">
+          {/* LOGO (DESKTOP ONLY) */}
+          <Link href="/" className="hidden md:block">
             <img
               src="/shraddha-logo-navbar.svg"
-              alt="Shraddha Tech Solutions"
-              className="h-9 w-auto"
+              alt="Shraddha"
+              className="h-8"
             />
           </Link>
 
-          {/* ========== DESKTOP MENU ========== */}
-          <div className="ml-auto hidden items-center space-x-12 md:flex">
-            <ul className="flex items-center space-x-10">
-
-              {/* Home / About / Industries / Team */}
-              {NAV_LINKS.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-white transition hover:text-[#D94500]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-
-              {/* SERVICES */}
-              <li
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+          {/* DESKTOP MENU */}
+          <div className="ml-auto hidden md:flex items-center space-x-10">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white transition hover:text-[#F54E02]"
               >
-                {/* Clickable Services */}
-                <Link
-                  href="/services"
-                  className="text-white transition hover:text-[#D94500]"
-                >
-                  Services
-                </Link>
+                {link.name}
+              </Link>
+            ))}
 
-                {/* Dropdown */}
-                {servicesOpen && (
-                  <div className="absolute left-0 top-full mt-1 pt-2 w-60 rounded bg-black shadow-lg">
-                    {SERVICES.map((service) => ( 
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="block px-4 py-3 text-sm text-white hover:bg-[#D94500]"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </li>
-            </ul>
+            {/* SERVICES */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <Link
+                href="/services"
+                className="text-white transition hover:text-[#F54E02]"
+              >
+                Services
+              </Link>
 
-            {/* CONTACT BUTTON */}
+              {servicesOpen && (
+                <div className="absolute left-0 top-full mt-2 w-60 rounded-lg bg-black shadow-xl overflow-hidden">
+                  {SERVICES.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="block px-4 py-3 text-sm text-white hover:bg-[#F54E02]"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link
               href="/contact"
-              className="rounded px-6 py-2 text-white transition hover:opacity-90"
+              className="rounded px-5 py-2 text-white text-sm"
               style={{ backgroundColor: BRAND_COLOR }}
             >
               Contact
             </Link>
           </div>
 
-          {/* ========== MOBILE BUTTON ========== */}
+          {/* MOBILE HAMBURGER */}
           <button
             onClick={() => setOpen(true)}
-            className="ml-auto flex flex-col gap-1 md:hidden"
+            className="ml-auto md:hidden"
           >
-            <span className="h-0.5 w-7 bg-white" />
-            <span className="h-0.5 w-7 bg-white" />
-            <span className="h-0.5 w-7 bg-white" />
+            <div className="space-y-1">
+              <span className="block h-0.5 w-6 bg-white" />
+              <span className="block h-0.5 w-6 bg-white" />
+              <span className="block h-0.5 w-6 bg-white" />
+            </div>
           </button>
         </div>
       </nav>
 
-      {/* ================= MOBILE OVERLAY ================= */}
+      {/* ================= OVERLAY ================= */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/60"
+          className="fixed inset-0 z-40 bg-black/40"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* ================= MOBILE DRAWER ================= */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-80 bg-black px-6 py-8
-          transition-transform duration-300
-          ${open ? "translate-x-0" : "translate-x-full"}
-        `}
+        className={`fixed right-0 top-0 z-50 h-full w-[58%] max-w-xs
+        transition-transform duration-300
+        ${open ? "translate-x-0" : "translate-x-full"}`}
+        style={{ backgroundColor: BRAND_COLOR }}
       >
-        <div className="mb-10 flex items-center justify-between">
-          <img src="/shraddha-logo-navbar.svg" className="h-8" />
+        {/* CLOSE BUTTON ONLY */}
+        <div className="flex justify-end px-5 py-5">
           <button
             onClick={() => setOpen(false)}
-            className="text-2xl text-white"
+            className="text-white text-xl"
           >
             ✕
           </button>
         </div>
 
-        <ul className="space-y-6 text-lg text-white">
-          <li>
-            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          </li>
-          <li>
-            <Link href="/aboutt" onClick={() => setOpen(false)}>About Us</Link>
-          </li>
-          <li>
-            <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
-          </li>
-          <li>
-            <Link href="/industry" onClick={() => setOpen(false)}>Industries</Link>
-          </li>
-          <li>
-            <Link href="/team" onClick={() => setOpen(false)}>Team</Link>
-          </li>
+        {/* MENU */}
+        <div className="px-6 space-y-6 text-white">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="block text-base tracking-wide transition hover:translate-x-1 hover:opacity-90"
+            >
+              {link.name}
+            </Link>
+          ))}
 
-          {/* Mobile Services List */}
-          <li className="border-t border-white/20 pt-4">
-            <p className="mb-3 font-semibold">Service Offerings</p>
-            <div className="space-y-3 pl-2">
+          {/* SERVICES */}
+          <div className="pt-4 border-t border-white/30">
+            <p className="mb-3 text-xs uppercase tracking-widest opacity-80">
+              Services
+            </p>
+            <div className="space-y-3">
               {SERVICES.map((service) => (
                 <Link
                   key={service.name}
                   href={service.href}
                   onClick={() => setOpen(false)}
-                  className="block text-sm hover:text-[#D94500]"
+                  className="block text-sm transition hover:translate-x-1 hover:opacity-90"
                 >
                   {service.name}
                 </Link>
               ))}
             </div>
-          </li>
+          </div>
 
+          {/* CTA */}
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-8 block rounded bg-[#D94500] px-4 py-2 text-center"
+            className="block mt-8 rounded-md bg-black/90 py-2.5 text-center text-sm font-semibold transition hover:bg-black"
           >
-            Contact Now
+            Contact Us
           </Link>
-        </ul>
+        </div>
       </aside>
     </>
   );

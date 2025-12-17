@@ -42,7 +42,7 @@ const DIGITAL_MARKETING_PROCESS: ProcessStep[] = [
 const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
   return (
     <motion.div
-      className="flex items-start gap-6 relative"
+      className="flex items-start gap-4 sm:gap-6 relative"
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -57,15 +57,20 @@ const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
           {step.number}
         </div>
         <div
-          className="w-[2px] h-16 mt-1"
+          className="w-[2px] h-14 sm:h-16 mt-1"
           style={{ backgroundColor: BRAND_COLOR }}
         />
       </div>
 
       {/* Content */}
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
-        <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
+          {step.title}
+        </h3>
+        <p
+          className="text-sm leading-relaxed"
+          style={{ color: TEXT_MUTED }}
+        >
           {step.description}
         </p>
       </div>
@@ -75,30 +80,38 @@ const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
 
 export default function DigitalMarketingProcessSection() {
   return (
-    <section className="py-20 bg-white" id="digital-marketing-process">
-      <div className="container mx-auto px-6 lg:px-18">
+    <section
+      className="bg-white py-14 sm:py-20"
+      id="digital-marketing-process"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-18">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <span className="inline-block bg-[#ff4500] w-12 h-[3px] mb-2"></span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
             Our Process
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: TEXT_MUTED }}>
-            We follow a systematic approach to ensure your digital marketing strategy delivers consistent results
+          <p
+            className="text-base sm:text-lg max-w-xl mx-auto"
+            style={{ color: TEXT_MUTED }}
+          >
+            We follow a systematic approach to ensure your digital marketing
+            strategy delivers consistent results
           </p>
         </div>
 
         {/* Layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
           {/* Left Content */}
-          <div className="lg:w-1/2 space-y-8">
+          <div className="lg:w-1/2 space-y-6 sm:space-y-8">
             {DIGITAL_MARKETING_PROCESS.map((step) => (
               <ProcessStepCard key={step.number} step={step} />
             ))}
           </div>
 
+          {/* Right Image */}
           <motion.div
-            className="relative lg:w-1/2 flex justify-end mt-12 lg:mt-0"
+            className="relative lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -109,18 +122,17 @@ export default function DigitalMarketingProcessSection() {
               <img
                 src="/digital-process-right.jpg"
                 alt="Digital Marketing"
-                className="w-full h-[520px] object-cover"
+                className="w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover"
               />
 
               {/* Side label */}
               <div className="absolute top-0 bottom-0 -left-20 w-20 bg-black flex items-center justify-center">
-                <span className="text-white font-extrabold text-4xl tracking-[0.5rem] rotate-90 uppercase">
+                <span className="text-white font-extrabold text-3xl sm:text-4xl tracking-[0.5rem] rotate-90 uppercase">
                   DM
                 </span>
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

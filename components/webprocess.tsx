@@ -40,28 +40,31 @@ const DEVELOPMENT_PROCESS: ProcessStep[] = [
 
 const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
   return (
-    <div className="flex items-start gap-6 relative">
+    <div className="flex items-start gap-4 sm:gap-6 relative">
       {/* Number & Line */}
       <div className="flex flex-col items-center">
         <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm"
+          className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-white font-bold text-sm"
           style={{ backgroundColor: BRAND_COLOR }}
         >
           {step.number}
         </div>
 
         <div
-          className="w-[2px] h-16 mt-1"
+          className="w-[2px] h-12 sm:h-16 mt-1"
           style={{ backgroundColor: BRAND_COLOR }}
         />
       </div>
 
       {/* Content */}
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-1">
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
           {step.title}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
+        <p
+          className="text-sm leading-relaxed"
+          style={{ color: TEXT_MUTED }}
+        >
           {step.description}
         </p>
       </div>
@@ -71,20 +74,23 @@ const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
 
 export default function DevelopmentProcessSection() {
   return (
-    <section className="py-20 bg-[#f8f9fa]" id="development-process">
-      <div className="container mx-auto px-6 lg:px-18">
+    <section
+      className="bg-[#f8f9fa] py-12 sm:py-16 lg:py-20"
+      id="development-process"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-18">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div
             className="w-12 h-1 mx-auto mb-3"
             style={{ backgroundColor: BRAND_COLOR }}
           />
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
             Our Development Process
           </h2>
           <p
-            className="text-lg max-w-xl mx-auto"
+            className="text-base sm:text-lg max-w-xl mx-auto"
             style={{ color: TEXT_MUTED }}
           >
             A systematic approach to delivering high-quality web solutions
@@ -95,17 +101,17 @@ export default function DevelopmentProcessSection() {
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
 
           {/* Image Section */}
-          <div className="relative lg:w-1/2 flex justify-start mb-12 lg:mb-0">
-            <div className="relative max-w-lg w-full overflow-hidden  ">
+          <div className="relative lg:w-1/2 flex justify-start mb-10 lg:mb-0">
+            <div className="relative max-w-lg w-full overflow-hidden">
 
               <img
                 src="/slide2.jpeg"
                 alt="Presentation"
-                className="w-full h-[520px] object-cover"
+                className="w-full h-[260px] sm:h-[360px] lg:h-[520px] object-cover"
               />
 
               {/* Side black label */}
-              <div className="absolute top-0 bottom-0 -left-20 w-20 bg-black flex items-center justify-center">
+              <div className="hidden sm:flex absolute top-0 bottom-0 -left-20 w-20 bg-black items-center justify-center">
                 <span className="text-white font-extrabold text-4xl tracking-[0.5rem] rotate-90 uppercase">
                   Shraddha
                 </span>
@@ -115,7 +121,7 @@ export default function DevelopmentProcessSection() {
           </div>
 
           {/* Steps */}
-          <div className="lg:w-1/2 space-y-8">
+          <div className="lg:w-1/2 space-y-6 sm:space-y-8">
             {DEVELOPMENT_PROCESS.map((step) => (
               <ProcessStepCard key={step.number} step={step} />
             ))}

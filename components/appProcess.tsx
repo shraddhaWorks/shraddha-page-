@@ -54,7 +54,7 @@ const DEVELOPMENT_PROCESS: ProcessStep[] = [
 const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
   return (
     <motion.div
-      className="flex items-start gap-6 relative"
+      className="flex items-start gap-4 sm:gap-6 relative"
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -63,23 +63,26 @@ const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
       {/* Number & Line */}
       <div className="flex flex-col items-center">
         <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm"
+          className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm"
           style={{ backgroundColor: BRAND_COLOR }}
         >
           {step.number}
         </div>
         <div
-          className="w-[2px] h-16 mt-1"
+          className="w-[2px] h-12 sm:h-16 mt-1"
           style={{ backgroundColor: BRAND_COLOR }}
         />
       </div>
 
       {/* Content */}
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-1">
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
           {step.title}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
+        <p
+          className="text-xs sm:text-sm leading-relaxed"
+          style={{ color: TEXT_MUTED }}
+        >
           {step.description}
         </p>
       </div>
@@ -89,39 +92,44 @@ const ProcessStepCard = ({ step }: { step: ProcessStep }) => {
 
 export default function DevelopmentProcessSection() {
   return (
-    <section className="py-20 bg-white" id="development-process">
-      <div className="container mx-auto px-6 lg:px-18">
+    <section className="py-14 sm:py-16 lg:py-20 bg-white" id="development-process">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-18">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block bg-[#ff4500] w-12 h-[3px] mb-2"></span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block bg-[#ff4500] w-10 sm:w-12 h-[3px] mb-2"></span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3">
             Our Development Process
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: TEXT_MUTED }}>
+          <p
+            className="text-sm sm:text-base lg:text-lg max-w-xl mx-auto"
+            style={{ color: TEXT_MUTED }}
+          >
             A structured, transparent approach to ensure your app is delivered on time and meets all requirements
           </p>
         </div>
 
         {/* Layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+
           {/* Image Section */}
           <motion.div
-            className="relative lg:w-1/2 flex justify-start mb-12 lg:mb-0 "
+            className="relative lg:w-1/2 flex justify-center lg:justify-start mb-10 sm:mb-12 lg:mb-0"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative max-w-lg w-full overflow-hidden rounded-xl">
+            <div className="relative max-w-xs sm:max-w-md lg:max-w-lg w-full overflow-hidden rounded-xl">
               <img
                 src="/web-left-process.webp"
                 alt="Mobile App Presentation"
-                className="w-full h-[700px] object-cover"
+                className="w-full h-[360px] sm:h-[520px] lg:h-[700px] object-cover"
               />
-             
+
               {/* Side black label */}
-              <div className="absolute top-0 bottom-0 -left-20 w-20 bg-black flex items-center justify-center">
-                <span className="text-white font-extrabold text-4xl tracking-[0.5rem] rotate-90 uppercase">
+              <div className="absolute top-0 bottom-0 -left-14 sm:-left-20 w-14 sm:w-20 bg-black flex items-center justify-center">
+                <span className="text-white font-extrabold text-2xl sm:text-4xl tracking-[0.4rem] sm:tracking-[0.5rem] rotate-90 uppercase">
                   App
                 </span>
               </div>
@@ -129,7 +137,7 @@ export default function DevelopmentProcessSection() {
           </motion.div>
 
           {/* Steps */}
-          <div className="lg:w-1/2 space-y-8">
+          <div className="lg:w-1/2 space-y-6 sm:space-y-8">
             {DEVELOPMENT_PROCESS.map((step) => (
               <ProcessStepCard key={step.number} step={step} />
             ))}
