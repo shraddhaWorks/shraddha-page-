@@ -33,12 +33,13 @@ export default function Navbar() {
     <>
       {/* ================= NAVBAR ================= */}
       <nav
-        className={`fixed top-0 z-50 w-full transition-all duration-300
+        className={`fixed top-0 z-50 w-full transition-all duration-300 flex items-center
         ${scrolled ? "bg-black shadow-md" : "bg-transparent"}`}
       >
-        <div className="mx-auto flex h-16 max-w-8xl items-center px-5 lg:px-16">
-          {/* LOGO (DESKTOP ONLY) */}
-          <Link href="/" className="hidden md:block">
+        <div className="mx-auto flex w-full max-w-8xl items-center px-5 lg:px-16 h-16">
+          
+          {/* LOGO (always visible) */}
+          <Link href="/">
             <img
               src="/shraddha-logo-navbar.svg"
               alt="Shraddha"
@@ -135,7 +136,7 @@ export default function Navbar() {
         </div>
 
         {/* MENU */}
-        <div className="px-6 space-y-6 text-white">
+        <div className="px-6 pt-6 space-y-6 text-white">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.name}
