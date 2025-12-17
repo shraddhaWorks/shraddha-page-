@@ -46,18 +46,19 @@ const team = [
     image: "/team/sup.jpg",
     linkedin: "#",
   },
+    {
+    name: "Dinesh",
+    role: "FullStack Developer",
+    image: "/team/dinesh.jpeg",
+    linkedin: "#",
+  },
   {
     name: "Jayasimha",
     role: "Frontend Developer",
     image: "/team/jaya.jpeg",
     linkedin: "#",
   },
-  {
-    name: "Dinesh",
-    role: "FullStack Developer",
-    image: "/team/dinesh.jpeg",
-    linkedin: "#",
-  },
+
   {
     name: "Shankar",
     role: "FullStack Developer",
