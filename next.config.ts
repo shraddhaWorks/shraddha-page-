@@ -2,14 +2,26 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
+    remotePatterns: [
       // webstack domains
-      "cdn.jsdelivr.net",
-      "avatars.githubusercontent.com",
-      "images.unsplash.com",
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
 
       // appStack domains
-      "upload.wikimedia.org",
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
     ],
   },
 };
