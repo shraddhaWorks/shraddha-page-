@@ -13,7 +13,7 @@ export default function HeroSection({
   imageSrc = "/aboutus-section1-img-new.png",
 }) {
   return (
-    <section className="w-full bg-black py-20 sm:py-28 lg:py-40 px-4 sm:px-8 lg:px-18">
+    <section className="w-full bg-[#0B1120] py-25 sm:py-28 lg:py-40 px-4 sm:px-8 lg:px-18">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
         
         {/* LEFT CONTENT */}

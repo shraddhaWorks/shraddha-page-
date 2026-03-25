@@ -15,7 +15,7 @@ const About = () => {
     <div>
       <HeroSection />
       <AboutPage />
-      <OurClients />
+     
       <OurTeam />
       
     </div>
