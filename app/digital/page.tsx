@@ -16,7 +16,7 @@ const Digital = () => {
         description="We help brands build a strong online presence through SEO, paid advertising, and performance-driven campaigns. Our approach combines creativity, analytics, and continuous optimization to deliver measurable results."
         primaryBtnText="Get a Free Consultation"
         primaryBtnLink="#"
-        imageSrc="/digital-top-right.jpg"
+        imageSrc="/digitalTop.jpg"
       />
 
       <DigitalMarketingServicesSection />
