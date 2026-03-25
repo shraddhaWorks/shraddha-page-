@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ExactNavbarAligned from "@/components/navbar";
-import Footer from "@/components/fotter";
+import ExactNavbarAligned from "@/components/navbarNew";
+import Footer from "@/components/footerNew";
 
 const inter = Inter({
   weight: ["400", "500", "700"],

@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import AboutSection from "@/components/aboutus";
-import Banner from "@/components/baneer";
+import Banner from "@/components/baneerNew";
 import { motion } from "framer-motion";
-import BusinessServicesSection from "@/components/services";
+import BusinessServicesSection from "@/components/servicesNew";
 import ContactPopup from "@/components/miniContact"; // Make sure this matches your actual file
-import WhyChooseShraddha from "@/components/WhyChooseShraddha";
+import WhyChooseShraddha from "@/components/whyChooseShraddhaNew"; // Updated import for the new component
 import MovingTestimonials from "@/components/testmonial";
+import ContactCTA from "@/components/contactCTA";
+
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -22,11 +24,12 @@ const Home = () => {
 
   return (
     <div className="relative">
-      <Banner />
+      <Banner onGetStarted={() => setShowPopup(true)} />
       <BusinessServicesSection />
       <WhyChooseShraddha />
+      
       <MovingTestimonials />
-
+      <ContactCTA onGetStarted={() => setShowPopup(true)} />
        {/* Contact Popup */}
        <ContactPopup
         isOpen={showPopup}
