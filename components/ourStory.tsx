@@ -10,10 +10,10 @@ export default function AboutPage() {
     <div className="w-full bg-white">
 
       {/* ================= OUR STORY ================= */}
-      <section className="container mx-auto px-4 sm:px-6 md:px-16 py-16 sm:py-20 lg:py-24 grid md:grid-cols-2 gap-10 sm:gap-12 items-center">
+     <section className="container mx-auto px-4 sm:px-6 md:px-16 py-16 sm:py-20 lg:py-24 grid md:grid-cols-2 gap-10 sm:gap-12 items-center">
         
         {/* Left Image */}
-        <div className="relative">
+        <div className="relative order-2 md:order-1">
           <motion.div className="overflow-hidden rounded-xl">
             <Image
               src="/aboutus-section1-img.png"
@@ -30,7 +30,7 @@ export default function AboutPage() {
         </div>
 
         {/* Right Text */}
-        <div>
+        <div className="order-1 md:order-2">
           <h2 className="text-3xl sm:text-4xl font-bold mb-5 sm:mb-6">
             Our Story
           </h2>

@@ -16,22 +16,11 @@ const team = [
     image: "/team/sridhar.png",
     linkedin: "#",
   },
-  {
-    name: "Renuka",
-    role: "Frontend & UI/UX",
-    image: "/team/renu.jpg",
-    linkedin: "#",
-  },
-  {
-    name: "Poojitha",
-    role: "UI/UX Designer",
-    image: "/team/poojitha.jpg",
-    linkedin: "#",
-  },
-  {
-    name: "ABhi Ram",
-    role: "Full Stack Developer",
-    image: "/team/abhi.jpg",
+  
+   {
+    name: "Jayasimha",
+    role: "Frontend Developer",
+    image: "/team/jaya.jpeg",
     linkedin: "#",
   },
   {
@@ -52,12 +41,7 @@ const team = [
     image: "/team/dinesh.jpeg",
     linkedin: "#",
   },
-  {
-    name: "Jayasimha",
-    role: "Frontend Developer",
-    image: "/team/jaya.jpeg",
-    linkedin: "#",
-  },
+ 
 
   {
     name: "Shankar",
