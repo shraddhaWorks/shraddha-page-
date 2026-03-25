@@ -38,14 +38,17 @@ export default function Banner({ onGetStarted }: { onGetStarted: () => void }) {
       {/* FIXED FLOATING THEME BARS 
           Using 'absolute' instead of 'fixed' keeps them locked inside this section.
           'hidden lg:flex' ensures they don't show on mobile as requested.
+
+          transform ${isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+          }
       */}
       <div
-        className={`absolute bottom-30 right-0 z-20 hidden lg:flex transition-all duration-1000 ease-out transform ${isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-          }`}
+        className={`absolute bottom-30 right-0 z-20 hidden lg:flex transition-all duration-1000 ease-out `}
       >
         <div className="w-16 h-64 bg-[#F54E02]" />
         <div className="w-10 h-64 bg-[#F54E02]/80" />
-        <div className="w-6 h-64 bg-[#F54E02]/50" />
+        <div className="w-7 h-64 bg-[#F54E02]/65" />
+        <div className="w-5 h-64 bg-[#F54E02]/50" />
         <div className="w-3 h-64 bg-[#F54E02]/30" />
         <div className="w-1.5 h-64 bg-[#F54E02]/10" />
       </div>
