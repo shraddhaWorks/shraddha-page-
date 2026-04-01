@@ -60,14 +60,30 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-4">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
-                <Link key={idx} href="#" className="w-10 h-10 rounded-full flex items-center justify-center border transition-all group
-                  bg-white border-slate-200 hover:border-[#F54E02] hover:bg-[#F54E02]
-                  dark:bg-slate-900 dark:border-slate-700 dark:hover:border-[#F54E02] dark:hover:bg-[#F54E02]">
-                  <Icon size={18} className="text-slate-500 group-hover:text-white dark:text-slate-400" />
-                </Link>
-              ))}
-            </div>
+  {/* Instagram */}
+  <Link 
+    href="https://www.instagram.com/shraddhaedu?igsh=MTByZGdhcDF6bDlhNQ=="
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 rounded-full flex items-center justify-center border transition-all group
+      bg-white border-slate-200 hover:border-[#F54E02] hover:bg-[#F54E02]
+      dark:bg-slate-900 dark:border-slate-700 dark:hover:border-[#F54E02] dark:hover:bg-[#F54E02]"
+  >
+    <Instagram size={18} className="text-slate-500 group-hover:text-white dark:text-slate-400" />
+  </Link>
+
+  {/* LinkedIn */}
+  <Link 
+    href="https://www.linkedin.com/company/shraddhagroup/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 rounded-full flex items-center justify-center border transition-all group
+      bg-white border-slate-200 hover:border-[#F54E02] hover:bg-[#F54E02]
+      dark:bg-slate-900 dark:border-slate-700 dark:hover:border-[#F54E02] dark:hover:bg-[#F54E02]"
+  >
+    <Linkedin size={18} className="text-slate-500 group-hover:text-white dark:text-slate-400" />
+  </Link>
+</div>
           </div>
 
           {/* 2. Quick Links */}
